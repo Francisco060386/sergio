@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
-abstract class Controller
+use Illuminate\Http\Request;
+
+
+class productosController extends Controller
 {
-    //
+    public Function __invoke() {
+        return"Index";
+    }
 }
