@@ -12,7 +12,7 @@ class productoscontroller extends Controller
         return view("productos");
     }
 
-    // cuando se trata de llamar a un formulario para creae un registro
+    //cuando se trata de llamar a un formulario para crear un registro
     public function create(){
         return "Carrito activo";
     }

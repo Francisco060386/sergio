@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\indexController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\productosController;
 
 // Route::get('/', Function () {
@@ -9,27 +9,13 @@ use App\Http\Controllers\productosController;
 // });
 Route::get('/', IndexController::class);
 
-//------------ declaracion de rutas fijas ---------------
-Route::get('/Productos',[productosController::class, "index"]);
+/*
 
-//------------ declaracion con parametros ---------------
-Route::get('Productos/crear', [productosController::class, "create"]);
-
-Route::get('Productos/{product}',[productosController::class, "show"]);
-
-
-//------------ declaracion de rutas fijas ---------------
-Route::get('productos',function(){
-    return "Seccion de productos";
-});
-
-//------------ declaracion con parametros -------------
-Route::get('Productos/{id}', function ($id){
-    return "Bienvenido $id";
-});
-
-Route::get('prueba_parametro/{id}', function($id){
-    $d = $id;
-    $nombre = explode("-",$d);
-    return "tu nombre es $nombre[1]";
+Route::controller,se usa para iniciar que las rutas que se encuentran dentro del grrupo seran procesadas por el mismo controlador ,esto para simplificar el manejo de rutas
+*/
+Route::controller
+(productosController::class)->group(Function(){
+    Route::get('/Productos',"index");
+    Route::get('/Productos/crear',"creat");
+    Route::get('Productos/{prod}',"show");
 });
