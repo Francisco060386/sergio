@@ -18,4 +18,7 @@ Route::controller
     Route::get('/Productos',"index");
     Route::get('/Productos/crear',"creat");
     Route::get('Productos/{prod}',"show");
+    Route::get('/',function(){
+        return view('home');
+    });
 });

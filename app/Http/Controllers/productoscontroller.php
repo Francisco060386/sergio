@@ -9,7 +9,7 @@ class productoscontroller extends Controller
 {
     //cuando se indica que es una pagina principal el metodo se debe 
     public function index(){
-        return view("productos");
+        return view("show");
     }
 
     //cuando se trata de llamar a un formulario para crear un registro
